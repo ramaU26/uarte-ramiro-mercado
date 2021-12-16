@@ -1,35 +1,55 @@
-import './App.css';
-import  BarraDeNavegacion from './componentes/NavBar'
-import ItemListContainer from './componentes/ItemListContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React , {useState} from 'react'
+import React, {Fragment, useState} from 'react';
+import item from './ItemListaContainer/componentes/Item';
+import Carrito from './ItemListaContainer/componentes/Carrito'
+import { Cart } from 'react-bootstrap-icons';
+
+function App(){ 
+
+const [items, setItem] = useState ([
+    {id : 1, nombre: 'Triston' , precio: 250},
+    {id : 2, nombre: 'feliz' , precio: 800},
+    {id : 3, nombre: 'miron' , precio: 600},
+    {id : 4, nombre: 'celoso' , precio: 450},
+    {id : 5, nombre: 'enojon' , precio: 780},
+    {id : 6, nombre: 'gamer' , precio: 1000},
+
+])
+
+const [Carrito, setCarrito] = useState ([])
+
+return(
+    <Fragment>
+        <h3>Lista de productos</h3>
+        {items.map((item) => (
+          <item
+          key={item.id}
+          item={item}
+          Carrito={Carrito}
+          setCarrito={setCarrito}
+          items={items}
+          />
+        ))}
+
+        <Carrito
+        carrito= {Carrito}
+
+        />
+
+    </Fragment>
+
+);
+
+        }
 
 
-
-
-function App() {
-  const [cantidad, setCantidad] = useState(0)
-  const sumar = () => {
-    if(cantidad < 50){setCantidad( cantidad + 1)}
-    
-  }
-  const restar = () => {
-    if(cantidad > 0){setCantidad( cantidad - 1)}
-  }
-  
-
-  return ( 
-    <React.Fragment className="app">
-      <BarraDeNavegacion/>
-      <ItemListContainer ></ItemListContainer>
-     <div></div>
-     <span>{cantidad}</span>
-     <button onClick={sumar}>+</button>
-     <button onClick={restar}>-</button>
-     </React.Fragment>
-    
-    
-  );
-}
+        
 
 export default App;
+
+
+
+
+
+
+
+
