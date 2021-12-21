@@ -1,7 +1,6 @@
 import React, {Fragment, useState} from 'react';
-import item from './ItemListaContainer/componentes/Item';
-import Carrito from './ItemListaContainer/componentes/Carrito'
-import { Cart } from 'react-bootstrap-icons';
+/*import item from './ItemListaContainer/componentes/Item';
+import Carrito from './ItemListaContainer/componentes/Carrito';*/
 
 function App(){ 
 
@@ -31,9 +30,9 @@ return(
         ))}
 
         <Carrito
-        carrito= {Carrito}
-
-        />
+        Carrito= {Carrito}
+        setCarrito={setCarrito}
+       />;
 
     </Fragment>
 

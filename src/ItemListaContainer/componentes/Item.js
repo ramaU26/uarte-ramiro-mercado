@@ -1,15 +1,17 @@
-import { Button } from "bootstrap";
 import React from "react";
-import { Brush } from "react-bootstrap-icons";
-
-const Item = ({item, carrito, setCarrito, items}) =>{
 
 
-    const{nombre,precio,id} = item
+const item = ({item, Carrito, setCarrito, items}) =>{
 
+// constante que guarda las propiedasdes
+   const{nombre,precio,id} = item
+
+
+
+// funcion para agregar al carrito
  const agregarItem = id =>{
      const item = items.filter((item) => item.id === id)
-     setCarrito([...carrito, ...items])
+     setCarrito([...Carrito, ...item])
  }
 
 
@@ -27,4 +29,4 @@ const Item = ({item, carrito, setCarrito, items}) =>{
 
 };
 
-export default Item
+export default item

@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "./Item";
+import item from './Item.js'
 
 
 const Carrito = ({Carrito,setCarrito}) => {
@@ -7,7 +7,7 @@ const Carrito = ({Carrito,setCarrito}) => {
         <div>
             <h3>Su carrito</h3>
 
-            {Carrito.length === 0 ? (<p>0</p>) : (Cart.map((item => <Item key={item.id} item={item} Carrito={Carrito} setCarrito={setCarrito} />)))}
+            {Carrito.length === 0 ? (<p>0</p>) : (Carrito.map((Item => <item key={Item.id} Item={Item} Carrito={Carrito} setCarrito={setCarrito} />)))}
         </div>
     )
 }
