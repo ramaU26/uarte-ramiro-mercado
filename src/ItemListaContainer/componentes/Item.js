@@ -1,7 +1,8 @@
 import React from "react";
 
 
-const item = ({item, Carrito, setCarrito, items}) =>{
+
+const item = ({item, carrito, setCarrito, items}) =>{
 
 // constante que guarda las propiedasdes
    const{nombre,precio,id} = item
@@ -11,20 +12,18 @@ const item = ({item, Carrito, setCarrito, items}) =>{
 // funcion para agregar al carrito
  const agregarItem = id =>{
      const item = items.filter((item) => item.id === id)
-     setCarrito([...Carrito, ...item])
+     setCarrito([...carrito, ...item])
  }
 
-
+ console.log(item)
     return(
-        <div>
-            <ul>
-                <il>{nombre}</il>
-                <il>{precio}</il>
-                <Button onClick ={() => agregarItem(id)}>Agregar al Carrito</Button>
-            </ul>
+        <li>
+                <span>{nombre}</span>
+                <span>{precio}</span>
+                <button type='button' onClick ={() => agregarItem(id)}>Agregar al Carrito</button>
 
 
-        </div>
+        </li>
     );
 
 };

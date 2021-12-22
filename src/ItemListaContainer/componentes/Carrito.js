@@ -1,13 +1,16 @@
+
 import React from "react";
-import item from './Item.js'
+
+import Item from "./Item";
 
 
-const Carrito = ({Carrito,setCarrito}) => {
+
+const Carrito = ({carrito,setCarrito}) => {
     return (
         <div>
             <h3>Su carrito</h3>
 
-            {Carrito.length === 0 ? (<p>0</p>) : (Carrito.map((Item => <item key={Item.id} Item={Item} Carrito={Carrito} setCarrito={setCarrito} />)))}
+            {carrito.length === 0 ? (<p>0</p>) : <ul> {carrito.map((item => <Item key={item.id} item={item} carrito={carrito} setCarrito={setCarrito} />))}</ul>}
         </div>
     )
 }

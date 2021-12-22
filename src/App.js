@@ -1,6 +1,9 @@
-import React, {Fragment, useState} from 'react';
-/*import item from './ItemListaContainer/componentes/Item';
-import Carrito from './ItemListaContainer/componentes/Carrito';*/
+import React, {useState} from 'react';
+import Item from './ItemListaContainer/componentes/Item';
+import Carrito from './ItemListaContainer/componentes/Carrito';
+import Navbar from './ItemListaContainer/componentes/NavBar'
+
+
 
 function App(){ 
 
@@ -14,27 +17,29 @@ const [items, setItem] = useState ([
 
 ])
 
-const [Carrito, setCarrito] = useState ([])
+const [carrito, setCarrito] = useState ([])
 
 return(
-    <Fragment>
-        <h3>Lista de productos</h3>
-        {items.map((item) => (
-          <item
+
+   <div>
+       <Navbar></Navbar>
+       <h3>Lista de productos</h3>
+       <ul> {items.map((item) => (
+          <Item
           key={item.id}
           item={item}
-          Carrito={Carrito}
+          carrito={carrito}
           setCarrito={setCarrito}
           items={items}
           />
-        ))}
+        ))} </ul>
 
         <Carrito
-        Carrito= {Carrito}
+        carrito={carrito}
         setCarrito={setCarrito}
        />;
-
-    </Fragment>
+       </div>
+  
 
 );
 
