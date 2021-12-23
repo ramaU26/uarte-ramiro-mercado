@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-const item = ({item, carrito, setCarrito, items}) =>{
+const item = ({item, cart, setCart, items}) =>{
 
 // constante que guarda las propiedasdes
    const{nombre,precio,id} = item
@@ -12,7 +12,7 @@ const item = ({item, carrito, setCarrito, items}) =>{
 // funcion para agregar al carrito
  const agregarItem = id =>{
      const item = items.filter((item) => item.id === id)
-     setCarrito([...carrito, ...item])
+     setCart([...cart, ...item])
  }
 
  console.log(item)

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Item from './ItemListaContainer/componentes/Item';
-import Carrito from './ItemListaContainer/componentes/Carrito';
+import Cart from './ItemListaContainer/componentes/Cart';
 import Navbar from './ItemListaContainer/componentes/NavBar'
 
 
@@ -17,7 +17,7 @@ const [items, setItem] = useState ([
 
 ])
 
-const [carrito, setCarrito] = useState ([])
+const [cart, setCart] = useState ([])
 
 return(
 
@@ -28,15 +28,15 @@ return(
           <Item
           key={item.id}
           item={item}
-          carrito={carrito}
-          setCarrito={setCarrito}
+          cart={cart}
+          setCart={setCart}
           items={items}
           />
         ))} </ul>
 
-        <Carrito
-        carrito={carrito}
-        setCarrito={setCarrito}
+        <Cart
+        cart={cart}
+        setCart={setCart}
        />;
        </div>
   
