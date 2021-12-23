@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Item from './ItemListaContainer/componentes/Item';
 import Cart from './ItemListaContainer/componentes/Cart';
 import Navbar from './ItemListaContainer/componentes/NavBar'
-
+import "./styles/"
 
 
 function App(){ 
@@ -21,7 +21,7 @@ const [cart, setCart] = useState ([])
 
 return(
 
-   <div>
+   <div className='container__header'>
        <Navbar></Navbar>
        <h3>Lista de productos</h3>
        <ul> {items.map((item) => (
